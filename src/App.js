@@ -1,5 +1,5 @@
 import React, { useReducer, createContext } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import Inicio from "./Inicio";
 import Test from "./Test";
 import Main from "./Main";
@@ -12,11 +12,11 @@ function App() {
   return (
     <StatusDispatchContext.Provider value={dispatch}>
       <StatusContext.Provider value={state}>
-        <BrowserRouter>
+        <HashRouter>
           <Route component={Main} path="/" />
           <Route component={Inicio} path="/inicio" exact />
           <Route component={Test} path="/test" exact />
-        </BrowserRouter>
+        </HashRouter>
       </StatusContext.Provider>
     </StatusDispatchContext.Provider>
   );
